@@ -5,7 +5,7 @@
     <v-text-field v-model="city" label="City"></v-text-field>
     <v-text-field v-model="state" label="State"></v-text-field>
     <v-text-field v-model="zip" label="Zipcode"></v-text-field>
-    <v-btn>Search</v-btn>
+    <v-btn to="/results">Search</v-btn>
   </v-form>
 </template>
 

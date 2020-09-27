@@ -3,27 +3,31 @@
     <v-row class="my-6"></v-row>
     <v-row>
       <v-col cols="8" class="mb-4">
-        <Rights/>
+        <SearchData/>
       </v-col>
     </v-row>
     <v-row>
       <v-col cols="8" class="mb-4">
-        <LookupForm/>
+        <Legal/>
       </v-col>
     </v-row>
   </v-container>
 </template>
 
 <script>
-// @ is an alias to /src
-import Rights from '@/components/Rights.vue'
-import LookupForm from "@/components/LookupForm";
-
+import SearchData from "@/components/SearchData";
+import Legal from "@/components/Legal";
 export default {
-  name: 'home',
-  components: {
-    Rights,
-    LookupForm
+  name: "SearchResults",
+  components: { Legal, SearchData },
+  data: () => {
+    const data = {};
+
+    return data;
   }
 }
 </script>
+
+<style scoped>
+
+</style>
