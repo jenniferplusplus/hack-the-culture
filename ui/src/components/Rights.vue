@@ -19,6 +19,6 @@
 
 <script>
 export default {
-  name: 'HelloWorld'
+  name: 'Rights'
 }
 </script>
