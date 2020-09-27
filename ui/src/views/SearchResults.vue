@@ -8,7 +8,7 @@
     </v-row>
     <v-row>
       <v-col cols="8" class="mb-4">
-        <Legal/>
+        <Protections/>
       </v-col>
     </v-row>
   </v-container>
@@ -16,10 +16,10 @@
 
 <script>
 import SearchData from "@/components/SearchData";
-import Legal from "@/components/Legal";
+import Protections from "@/components/Protections";
 export default {
   name: "SearchResults",
-  components: { Legal, SearchData }
+  components: { Protections, SearchData }
 }
 </script>
 

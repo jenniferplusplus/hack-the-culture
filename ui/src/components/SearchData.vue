@@ -12,20 +12,15 @@
 
 <script>
 import LookupService from '@/services/lookup.service';
-import {tap, skipWhile} from 'rxjs/operators';
 
 export default {
   name: "SearchData",
   data: () => {
-    // const vm = this;
     const data = {
       address: {}
     };
 
     LookupService.searchParams$
-      // .pipe(
-      //   skipWhile((value => value === undefined || value === null)),
-      // )
       .subscribe((val) => data.address = val);
 
     return data;
