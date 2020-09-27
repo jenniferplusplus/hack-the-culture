@@ -1,12 +1,13 @@
 <template>
   <v-main>
-    <v-form>
-      <v-text-field disabled v-model="address.street" label="Street Address"></v-text-field>
-      <v-text-field disabled v-model="address.apartment" label="Apartment Number"></v-text-field>
-      <v-text-field disabled v-model="address.city" label="City"></v-text-field>
-      <v-text-field disabled v-model="address.state" label="State"></v-text-field>
-      <v-text-field disabled v-model="address.zip" label="Zipcode"></v-text-field>
-    </v-form>
+    <h2 class="display-1 mb-4">Results for this address</h2>
+    <p>
+      {{address.street}}
+      <br>
+      {{address.apartment}}
+      <br v-if="address.apartment">
+      {{address.city}}<span v-if="address.city && address.state">, </span>{{address.state}} {{address.zip}}
+    </p>
   </v-main>
 </template>
 
