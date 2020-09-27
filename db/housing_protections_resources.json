@@ -1,0 +1,179 @@
+{
+    "type": "database",
+    "name": "housing_protect_resourcess",
+    "objects": [
+        {
+            "type": "table",
+            "database": null,
+            "name": "housing_relief_resources",
+            "withoutRowId": true,
+            "ddl": "CREATE TABLE housing_relief_resources (housing_rp_id INTEGER PRIMARY KEY AUTOINCREMENT, affordable_housing TEXT, homeless_service_providers TEXT, emergency_housing TEXT, financial_resources TEXT, food_bank_pantries TEXT, comm_dev_resources TEXT, hrr_jur_id INTEGER REFERENCES jurisdiction (juris_id))",
+            "columns": [
+                {
+                    "name": "housing_rp_id",
+                    "type": "INTEGER",
+                    "constraints": [
+                        {
+                            "type": "PRIMARY KEY",
+                            "definition": "PRIMARY KEY AUTOINCREMENT"
+                        }
+                    ]
+                },
+                {
+                    "name": "affordable_housing",
+                    "type": "TEXT"
+                },
+                {
+                    "name": "homeless_service_providers",
+                    "type": "TEXT"
+                },
+                {
+                    "name": "emergency_housing",
+                    "type": "TEXT"
+                },
+                {
+                    "name": "financial_resources",
+                    "type": "TEXT"
+                },
+                {
+                    "name": "food_bank_pantries",
+                    "type": "TEXT"
+                },
+                {
+                    "name": "comm_dev_resources",
+                    "type": "TEXT"
+                },
+                {
+                    "name": "hrr_jur_id",
+                    "type": "INTEGER",
+                    "constraints": [
+                        {
+                            "type": "FOREIGN KEY",
+                            "definition": "REFERENCES jurisdiction (juris_id)"
+                        }
+                    ]
+                }
+            ],
+            "rows": [
+            ]
+        },
+        {
+            "type": "table",
+            "database": null,
+            "name": "jurisdiction",
+            "withoutRowId": true,
+            "ddl": "CREATE TABLE jurisdiction (juris_id INTEGER PRIMARY KEY AUTOINCREMENT, city TEXT NOT NULL, zip_code NUMERIC NOT NULL, county TEXT NOT NULL, state TEXT (2) NOT NULL, audience_group TEXT)",
+            "columns": [
+                {
+                    "name": "juris_id",
+                    "type": "INTEGER",
+                    "constraints": [
+                        {
+                            "type": "PRIMARY KEY",
+                            "definition": "PRIMARY KEY AUTOINCREMENT"
+                        }
+                    ]
+                },
+                {
+                    "name": "city",
+                    "type": "TEXT",
+                    "constraints": [
+                        {
+                            "type": "NOT NULL",
+                            "definition": "NOT NULL"
+                        }
+                    ]
+                },
+                {
+                    "name": "zip_code",
+                    "type": "NUMERIC",
+                    "constraints": [
+                        {
+                            "type": "NOT NULL",
+                            "definition": "NOT NULL"
+                        }
+                    ]
+                },
+                {
+                    "name": "county",
+                    "type": "TEXT",
+                    "constraints": [
+                        {
+                            "type": "NOT NULL",
+                            "definition": "NOT NULL"
+                        }
+                    ]
+                },
+                {
+                    "name": "state",
+                    "type": "TEXT",
+                    "constraints": [
+                        {
+                            "type": "NOT NULL",
+                            "definition": "NOT NULL"
+                        }
+                    ]
+                },
+                {
+                    "name": "audience_group",
+                    "type": "TEXT"
+                }
+            ],
+            "rows": [
+            ]
+        },
+        {
+            "type": "table",
+            "database": null,
+            "name": "rights_protect",
+            "withoutRowId": true,
+            "ddl": "CREATE TABLE rights_protect (rights_protect_id INTEGER PRIMARY KEY AUTOINCREMENT, tenants_rights TEXT, mortgage_rights TEXT, covid19_protections TEXT, rp_juri_id INTEGER REFERENCES jurisdiction (juris_id), rp_hrr_id INTEGER REFERENCES housing_relief_resources (housing_rp_id))",
+            "columns": [
+                {
+                    "name": "rights_protect_id",
+                    "type": "INTEGER",
+                    "constraints": [
+                        {
+                            "type": "PRIMARY KEY",
+                            "definition": "PRIMARY KEY AUTOINCREMENT"
+                        }
+                    ]
+                },
+                {
+                    "name": "tenants_rights",
+                    "type": "TEXT"
+                },
+                {
+                    "name": "mortgage_rights",
+                    "type": "TEXT"
+                },
+                {
+                    "name": "covid19_protections",
+                    "type": "TEXT"
+                },
+                {
+                    "name": "rp_juri_id",
+                    "type": "INTEGER",
+                    "constraints": [
+                        {
+                            "type": "FOREIGN KEY",
+                            "definition": "REFERENCES jurisdiction (juris_id)"
+                        }
+                    ]
+                },
+                {
+                    "name": "rp_hrr_id",
+                    "type": "INTEGER",
+                    "constraints": [
+                        {
+                            "type": "FOREIGN KEY",
+                            "definition": "REFERENCES housing_relief_resources (housing_rp_id)"
+                        }
+                    ]
+                }
+            ],
+            "rows": [
+            ]
+        }
+    ]
+}
