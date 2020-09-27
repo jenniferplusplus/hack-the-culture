@@ -19,12 +19,7 @@ import SearchData from "@/components/SearchData";
 import Legal from "@/components/Legal";
 export default {
   name: "SearchResults",
-  components: { Legal, SearchData },
-  data: () => {
-    const data = {};
-
-    return data;
-  }
+  components: { Legal, SearchData }
 }
 </script>
 
